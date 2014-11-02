@@ -15,11 +15,6 @@ RUN cd /tmp && \
     rm ./elasticsearch-1.3.4.tar.gz && \
     mkdir /data
 
-# ES Plugins
-RUN /opt/elasticsearch/bin/plugin -i elasticsearch/marvel/latest && \
-    /opt/elasticsearch/bin/plugin -i lukas-vlcek/bigdesk/2.5.0 && \
-    /opt/elasticsearch/bin/plugin -i royrusso/elasticsearch-HQ
-
 # Copy conf across
 ADD conf/es.conf /etc/supervisor/conf.d/es.conf
 ADD conf/elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
@@ -32,6 +27,11 @@ VOLUME ["/data"]
 # Define working directory.
 WORKDIR /data
 
+# ES Plugins
+RUN /opt/elasticsearch/bin/plugin -i elasticsearch/marvel/latest && \
+    /opt/elasticsearch/bin/plugin -i lukas-vlcek/bigdesk/2.5.0 && \
+    /opt/elasticsearch/bin/plugin -i royrusso/elasticsearch-HQ
+
 # Define default command.
 CMD ["/run.sh"]
 
@@ -40,4 +40,3 @@ CMD ["/run.sh"]
 #   - 9300: transport
 EXPOSE 9200
 EXPOSE 9300
-
