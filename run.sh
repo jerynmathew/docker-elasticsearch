@@ -6,4 +6,4 @@ echo ""
 echo "    curl localhost:9200"
 echo ""
 echo "========================================================================"
-exec service supervisor restart
+service supervisor restart
