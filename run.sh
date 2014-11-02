@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 echo "========================================================================"
 echo "You can now connect to this Elasticsearch Server using:"
 echo ""
