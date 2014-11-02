@@ -11,7 +11,6 @@ RUN apt-get update && \
 RUN cd /tmp && \
     wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.4.tar.gz && \
     tar -xvzf ./elasticsearch-1.3.4.tar.gz && \
-    mkdir -p /opt/elasticsearch/ && \
     mv ./elasticsearch-1.3.4 /opt/elasticsearch && \
     rm ./elasticsearch-1.3.4.tar.gz
 
