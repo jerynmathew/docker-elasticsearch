@@ -12,7 +12,7 @@ RUN cd /tmp && \
     wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.4.tar.gz && \
     tar -xvzf ./elasticsearch-1.3.4.tar.gz && \
     mv ./elasticsearch-1.3.4 /opt/elasticsearch && \
-    rm ./elasticsearch-1.3.4.tar.gz && 
+    rm ./elasticsearch-1.3.4.tar.gz
 
 # Copy conf across
 ADD conf/es.conf /etc/supervisor/conf.d/es.conf
@@ -24,7 +24,7 @@ RUN chmod +x /*.sh
 VOLUME ["/opt/elasticsearch"]
 
 # Define working directory.
-WORKDIR //opt/elasticsearch
+WORKDIR /opt/elasticsearch
 
 # ES Plugins
 RUN /opt/elasticsearch/bin/plugin -i elasticsearch/marvel/latest && \
