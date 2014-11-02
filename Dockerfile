@@ -21,10 +21,10 @@ ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
 # Define mountable directories.
-VOLUME ["/opt/elasticsearch"]
+# VOLUME ["/opt/elasticsearch"]
 
 # Define working directory.
-WORKDIR /opt/elasticsearch
+# WORKDIR /opt/elasticsearch
 
 # ES Plugins
 RUN /opt/elasticsearch/bin/plugin -i elasticsearch/marvel/latest && \
